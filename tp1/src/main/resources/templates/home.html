@@ -1,0 +1,30 @@
+<html xmlns:th="https://www.thymeleaf.org" >
+<body>
+<h1>Créer un compte</h1>
+
+<form action="/client/create"
+      method="POST">
+    email <input name="mail">
+    <br>
+    mdp <input name="mdp">
+    <br>
+    Nom <input name="nom">
+    <br>
+    Prénom <input name="prenom">
+    <br>
+    <input type="SUBMIT">
+</form>
+<hr/>
+
+<h1>Login</h1>
+<form action="/client/login"
+      method="POST">
+    email <input name="mail">
+    <br>
+    mdp <input name="mdp">
+    <br>
+    <input type="SUBMIT">
+</form>
+
+</body>
+</html>
