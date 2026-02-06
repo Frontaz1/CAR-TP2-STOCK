@@ -15,7 +15,6 @@ public class KafkaConsumer {
 
     private final static Logger LOGGER = LoggerFactory.getLogger(KafkaConsumer.class);
     private final StockService stockService;
-    private List<String> messages = Collections.synchronizedList(new ArrayList<>());
 
     public KafkaConsumer(StockService stockService) {
         this.stockService = stockService;
@@ -31,10 +30,5 @@ public class KafkaConsumer {
         String libelle = myArray[0];
         int qte = Integer.parseInt(myArray[1]);
         stockService.DeleteStock(libelle, qte);
-        messages.add(record.value());
-    }
-
-    public List<String> getMessages() {
-        return messages;
     }
 }
